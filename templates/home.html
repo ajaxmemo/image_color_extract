@@ -52,9 +52,9 @@
   {%  for code in codes  %}
     <tr>
         <th scope="row"><div style="background:#{{code}}; height:39px"></div></th>
-      <td id="copyme">#{{code}}</td>
+      <td id="copyme{{code}}">#{{code}}</td>
 
-      <td><button type="button" class="btn btn-light" id="copy_button" data-toggle="tooltip" data-placement="top" title="Copy to clipboard" onClick = "clip_div('copyme')">Copy</button></td>
+      <td><button type="button" class="btn btn-light" id="copy_button{{code}}"  onClick = "clip_div('copyme{{code}}')">Copy</button></td>
 
     </tr>
 
@@ -124,7 +124,11 @@
     console.log("OK COPIED: '"+txt+"'")
 }
 function clip_div(divId){
+   buttoncode = divId.replace('copyme', '')
+   button_id = "copy_button"+buttoncode
+   document.getElementById(button_id).innerHTML = "Copied"
    return clip_text(document.getElementById(divId).innerText)
+
 
 }
 </script>
