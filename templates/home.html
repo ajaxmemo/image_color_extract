@@ -126,6 +126,7 @@
 function clip_div(divId){
    buttoncode = divId.replace('copyme', '')
    button_id = "copy_button"+buttoncode
+   console.log(button_id)
    document.getElementById(button_id).innerHTML = "Copied"
    return clip_text(document.getElementById(divId).innerText)
 
