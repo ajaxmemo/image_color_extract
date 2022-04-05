@@ -3,14 +3,14 @@ import os
 import numpy as np
 from PIL import Image
 
-UPLOAD_FOLDER = './static/image'
+UPLOAD_FOLDER = 'static/image'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 @app.route('/',  methods=['GET', 'POST'])
 def home():
-    img_path = "./static/image\Image Color Extract.jpg"
+    img_path = "static/image/Image Color Extract.jpg"
     if request.method == 'POST':
         if 'image_file' not in request.files:
             return 'there is no file1 in form!'
